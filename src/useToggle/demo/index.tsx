@@ -3,20 +3,20 @@ import { Button } from 'antd';
 import useToggle from '../index';
 
 const Demo = () => {
-  const [state, { toggle, setLeft, setRight }] = useToggle('Hello', 'World');
+  const [state, { toggle, setLeft, setRight }] = useToggle('Pyc', 'Mlz');
   return (
     <>
       <p>name: {state}</p>
       <p style={{ display: 'flex' }}>
         <Button onClick={() => toggle()}>Toggle</Button>
-        <Button onClick={() => toggle('Hello')} style={{ margin: '0 16px' }}>
-          Toggle Hello
+        <Button onClick={() => toggle('Pyc')} style={{ margin: '0 16px' }}>
+          Toggle Pyc
         </Button>
-        <Button onClick={() => toggle('World')}>Toggle World</Button>
+        <Button onClick={() => toggle('Mlz')}>Toggle Mlz</Button>
         <Button onClick={() => setLeft()} style={{ margin: '0 16px' }}>
-          set Hello
+          set Pyc
         </Button>
-        <Button onClick={() => setRight()}>set World</Button>
+        <Button onClick={() => setRight()}>set Mlz</Button>
       </p>
     </>
   );
