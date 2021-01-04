@@ -8,6 +8,10 @@ group:
 
 用于两个状态之间来回切换的函数
 
+## 代码演示
+
+<code src='./demo' />
+
 ## API
 
 ```javascript
