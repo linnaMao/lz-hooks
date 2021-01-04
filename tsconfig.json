@@ -13,7 +13,10 @@
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
     },
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
   },
   "exclude": [
     "node_modules",
@@ -22,6 +25,7 @@
     "dist",
     "typings",
     "**/__test__",
-    "test"
+    "test",
+    "**/demo"
   ]
 }

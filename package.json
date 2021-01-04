@@ -1,21 +1,28 @@
 {
   "private": true,
-  "name": "lz-hook",
+  "name": "lz-hooks",
   "version": "1.0.0",
+  "description": "react hooks library",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "start": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father-build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "release": "npm run build && npm publish",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "build": "father-build && tsc",
+    "test": "umi-test"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "hooks"
+  ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
