@@ -1,5 +1,6 @@
 import * as React from 'react';
-import useUpdateEffect from 'lz-hooks';
+import { Button } from 'antd';
+import useUpdateEffect from '../index';
 
 const Demo: React.FC = () => {
   const [count, setCount] = React.useState(0);
@@ -20,9 +21,11 @@ const Demo: React.FC = () => {
 
   return (
     <>
-      <button onClick={handleAdd}>add</button>
-      <div>useUpdateEffect: {updateEffectCount}</div>
-      <div>useEffect: {effectCount}</div>
+      <p>
+        <Button onClick={handleAdd}>add</Button>
+      </p>
+      <p>useUpdateEffect: {updateEffectCount}</p>
+      <p>useEffect: {effectCount}</p>
     </>
   );
 };
