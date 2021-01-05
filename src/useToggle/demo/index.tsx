@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import useToggle from '../index';
+import { useToggle } from 'lz-hooks';
 
 const Demo = () => {
   const [state, { toggle, setLeft, setRight }] = useToggle('Pyc', 'Mlz');

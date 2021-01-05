@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import useUpdateEffect from '../index';
+import { useUpdateEffect } from 'lz-hooks';
 
 const Demo: React.FC = () => {
   const [count, setCount] = React.useState(0);

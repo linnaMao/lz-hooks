@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import usePersistFn from '../index';
+import { usePersistFn } from 'lz-hooks';
 
 function Demo() {
   const [count, setCount] = React.useState<number>(0);
