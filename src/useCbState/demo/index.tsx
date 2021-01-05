@@ -4,7 +4,6 @@ import { useCbState } from 'lz-hooks';
 
 const Demo: React.FC = () => {
   const [count, setCount] = useCbState(0);
-  const [state, setState] = React.useState(0);
 
   const handleBtnClick = () => {
     setCount(count + 1, value => {

@@ -26,20 +26,22 @@ function Demo() {
           add
         </Button>
       </p>
-      <p>
-        <p>
-          <p>count: {persistCount}</p>
-          <Button type="default" onClick={handlePersistFn}>
-            persistFn
-          </Button>
-        </p>
-        <p>
-          <p>count: {noPersistCount}</p>
-          <Button type="default" onClick={handleWithoutFn}>
-            withoutPersistFn
-          </Button>
-        </p>
-      </p>
+      <div>
+        <p>count: {persistCount}</p>
+        <Button
+          type="default"
+          onClick={handlePersistFn}
+          style={{ marginBottom: 16 }}
+        >
+          persistFn
+        </Button>
+      </div>
+      <div>
+        <p>count: {noPersistCount}</p>
+        <Button type="default" onClick={handleWithoutFn}>
+          withoutPersistFn
+        </Button>
+      </div>
     </>
   );
 }
