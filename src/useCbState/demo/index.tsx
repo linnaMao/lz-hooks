@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, message } from 'antd';
-import useCbState from '../index';
+import { useCbState } from 'lz-hooks';
 
 const Demo: React.FC = () => {
   const [count, setCount] = useCbState(0);
