@@ -3,20 +3,20 @@ import { Button } from 'antd';
 import { useToggle } from 'lz-hooks';
 
 const Demo = () => {
-  const [state, { toggle, setLeft, setRight }] = useToggle('Pyc', 'Mlz');
+  const [state, { toggle, setLeft, setRight }] = useToggle('hello', 'world');
   return (
     <>
       <p>name: {state}</p>
       <p style={{ display: 'flex' }}>
         <Button onClick={() => toggle()}>Toggle</Button>
-        <Button onClick={() => toggle('Pyc')} style={{ margin: '0 16px' }}>
-          Toggle Pyc
+        <Button onClick={() => toggle('hello')} style={{ margin: '0 16px' }}>
+          Toggle hello
         </Button>
-        <Button onClick={() => toggle('Mlz')}>Toggle Mlz</Button>
+        <Button onClick={() => toggle('world')}>Toggle world</Button>
         <Button onClick={() => setLeft()} style={{ margin: '0 16px' }}>
-          set Pyc
+          set hello
         </Button>
-        <Button onClick={() => setRight()}>set Mlz</Button>
+        <Button onClick={() => setRight()}>set world</Button>
       </p>
     </>
   );
