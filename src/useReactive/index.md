@@ -14,6 +14,10 @@ group:
 
 <code src='./demo/demo2.tsx' />
 
+## 注意事项
+
+利用`useReactive`包裹的代理对象引用是不会变的，所以在使用 use hooks 的时候，依赖为该代理对象是不会重新执行的，依赖只能为变化的变量。
+
 ## API
 
 ```javascript
