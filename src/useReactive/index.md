@@ -17,5 +17,5 @@ group:
 ## API
 
 ```javascript
-const useReactive({})
+const state = useReactive({});
 ```
