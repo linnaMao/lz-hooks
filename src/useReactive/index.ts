@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // 定义对象
-const proxyMap = new Map();
+const proxyMap = new WeakMap();
 
 const observe = <T extends object>(initialObj: T, cb: () => void): T => {
   const existingProxy = proxyMap.get(initialObj);
@@ -26,6 +26,7 @@ const observe = <T extends object>(initialObj: T, cb: () => void): T => {
   return proxy;
 };
 
+// 传入初始值，利用proxy设置操作代理对象，最终返回这个代理对象。
 const useReactive = <T extends object>(initialObj: T) => {
   // 强制渲染
   const [, setState] = React.useState({});
