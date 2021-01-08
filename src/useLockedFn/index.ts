@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { usePersistFn } from '..';
 
-export type TFn = (...args: any[]) => Promise<any>;
+export type TFn = (...args: any[]) => Promise<void>;
 
 const useLockedFn = (fn: TFn) => {
   const ref = React.useRef<boolean>(false);
