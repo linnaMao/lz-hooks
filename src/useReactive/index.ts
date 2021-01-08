@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// 定义对象
 const proxyMap = new Map();
 
 const observe = <T extends object>(initialObj: T, cb: () => void): T => {
@@ -12,7 +13,8 @@ const observe = <T extends object>(initialObj: T, cb: () => void): T => {
   const proxy = new Proxy<T>(initialObj, {
     get: (target, propKey, receiver) => {
       const ret = Reflect.get(target, propKey, receiver);
-      return typeof ret === 'object' ? observe(ret, cb) : ret;
+      // 对象里面还嵌套对象
+      return ret && typeof ret === 'object' ? observe(ret, cb) : ret;
     },
     set: (target, propKey, receiver) => {
       cb();
@@ -25,18 +27,15 @@ const observe = <T extends object>(initialObj: T, cb: () => void): T => {
 };
 
 const useReactive = <T extends object>(initialObj: T) => {
-  const [, setFlag] = React.useState({});
+  // 强制渲染
+  const [, setState] = React.useState({});
   const stateRef = React.useRef<T>(initialObj);
-
-  // const state = React.useMemo(() => {
-  //   return observe(stateRef.current, () => {
-  //     setFlag({})
-  //   })
-  // }, [])
-
-  return observe(stateRef.current, () => {
-    setFlag({});
-  });
+  const state = React.useMemo(() => {
+    return observe(stateRef.current, () => {
+      setState({});
+    });
+  }, []);
+  return state;
 };
 
 export default useReactive;
