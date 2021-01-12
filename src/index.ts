@@ -6,3 +6,4 @@ export { default as useCbState } from './useCbState';
 export { default as useInterval } from './useInterval';
 export { default as useReactive } from './useReactive';
 export { default as useLockedFn } from './useLockedFn';
+export { default as useDeepEffect } from './useDeepEffect';
