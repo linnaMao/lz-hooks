@@ -1,20 +1,12 @@
 import * as React from 'react';
 import { usePersistFn } from '..';
+import { TCb, TUseCbState } from './type';
 
-export type TCb = (state: any) => any;
+function useCbState<T>(value: T): TUseCbState<T> {
+  const [state, setState] = React.useState<T>(value);
+  const ref = React.useRef<TCb<T> | undefined>();
 
-export interface IUseCbState {
-  /** 获取的值 */
-  state: any;
-  /** 设置state，第二个参数可以进行回调，获取最新的state */
-  setCbState: (state: any) => void;
-}
-
-const useCbState = (value: any) => {
-  const [state, setState] = React.useState(value);
-  const ref = React.useRef<TCb | undefined>();
-
-  const setCbState = usePersistFn((value: any, cb: any) => {
+  const setCbState = usePersistFn((value, cb) => {
     ref.current = cb;
     setState(value);
   });
@@ -26,6 +18,6 @@ const useCbState = (value: any) => {
   }, [state]);
 
   return [state, setCbState];
-};
+}
 
 export default useCbState;
