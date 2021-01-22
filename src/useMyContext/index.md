@@ -11,7 +11,7 @@ group:
 
 数据流，基于`React.createContext`和`useContext`进行了一层的封装，与 unstated-next 和 constate 不同的是，`Provider`利用高阶函数进行包裹，在使用的过程中不需要再重复写`Provider`
 
-数据流我形象的必须为找地(`React.createContext`) -> 播种(`Provider`) -> 收割(`useContext`)
+数据流我形象的比喻为一亩地(`React.createContext`) -> 播种(`Provider`) -> 收割(`useContext`)
 
 ## 代码演示
 
