@@ -8,3 +8,4 @@ export { default as useReactive } from './useReactive';
 export { default as useLockedFn } from './useLockedFn';
 export { default as useDeepEffect } from './useDeepEffect';
 export { default as createContext } from './useMyContext';
+export { default as FastForm } from './FastForm';
