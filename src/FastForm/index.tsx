@@ -2,16 +2,17 @@ import * as React from 'react';
 import {
   Form as AntdForm,
   Input,
-  DatePicker,
+  // DatePicker,
   Button,
   Row,
   Col,
   Divider,
   InputNumber,
+  Cascader,
 } from 'antd';
 import { useForm } from 'antd/lib/form/Form';
 import moment from 'moment';
-import { Radio, Select } from './component';
+import { Radio, Select, DatePicker } from './component';
 
 type TDefaultValue = {
   cn: string;
@@ -49,12 +50,16 @@ const FastForm: React.FC<IFastFormProps> = props => {
         return <Input.TextArea style={{ width: '100%' }} />;
       case 'radio':
         return <Radio {...item} />;
-      case 'datePicker':
-        return <DatePicker style={{ width: '100%' }} />;
+      case 'date':
+        return <DatePicker style={{ width: '100%' }} {...item} />;
       case 'select':
         return <Select {...item} style={{ width: '100%' }} />;
+      case 'cascader':
+        return <Cascader {...item} />;
       case 'number':
         return <InputNumber style={{ width: '100%' }} />;
+      case 'custom':
+        return <div>123</div>;
       default:
         break;
     }

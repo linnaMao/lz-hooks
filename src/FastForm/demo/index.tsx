@@ -44,10 +44,42 @@ const Index: React.FC = () => {
       type: 'radio',
     },
     {
+      cn: '省份',
+      value: 'province',
+      rules: [],
+      componentProps: {
+        options: [
+          {
+            value: 'zhejiang',
+            label: 'Zhejiang',
+            children: [
+              {
+                value: 'hangzhou',
+                label: 'Hangzhou',
+              },
+            ],
+          },
+        ],
+      },
+      type: 'cascader',
+    },
+    {
       cn: '出生日期',
       value: 'birthday',
       rules: [],
-      type: 'datePicker',
+      componentProps: {
+        type: 'datePicker',
+      },
+      type: 'date',
+    },
+    {
+      cn: '入党日期',
+      value: 'date',
+      rules: [],
+      componentProps: {
+        type: 'dateTimePicker',
+      },
+      type: 'date',
     },
     {
       cn: '国际',
