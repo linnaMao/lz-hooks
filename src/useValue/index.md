@@ -1,10 +1,10 @@
 ---
 nav:
   title: Hooks
-  path: /hooks
+  path: /
 group:
   title: Hooks
-  path: /hooks
+  path: /
 ---
 
 # useValue
