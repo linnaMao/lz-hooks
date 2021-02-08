@@ -7,3 +7,4 @@ export { default as useReactive } from './useReactive';
 export { default as useLockedFn } from './useLockedFn';
 export { default as useDeepEffect } from './useDeepEffect';
 export { default as useLocalStorage } from './useStorage/useLocalStorage';
+export { default as useSessionStorage } from './useStorage/useSessionStorage';

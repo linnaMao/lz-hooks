@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import useLocalStorage from '..';
+import { useLocalStorage } from 'lz-hooks';
 
 const Demo: React.FC = () => {
   const [info, setInfo, removeInfo] = useLocalStorage('info');
