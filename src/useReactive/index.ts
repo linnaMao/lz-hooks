@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-// 定义对象
-const proxyMap = new WeakMap();
+// 定义对象，防止重建缓存作用
+const proxyMap = new Map();
 
 const observe = <T extends object>(initialObj: T, cb: () => void): T => {
   const existingProxy = proxyMap.get(initialObj);
-  // 防止重新构建缓存
+
   if (existingProxy) {
     return existingProxy;
   }
@@ -23,6 +23,7 @@ const observe = <T extends object>(initialObj: T, cb: () => void): T => {
   });
 
   proxyMap.set(initialObj, proxy);
+
   return proxy;
 };
 
