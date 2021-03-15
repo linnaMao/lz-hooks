@@ -17,6 +17,7 @@ const observe = <T extends object>(initialObj: T, cb: () => void): T => {
       return ret && typeof ret === 'object' ? observe(ret, cb) : ret;
     },
     set: (target, propKey, receiver) => {
+      // 强制渲染，能够强制进行设置
       cb();
       return Reflect.set(target, propKey, receiver);
     },
