@@ -1,14 +1,16 @@
 import * as React from 'react';
+import { message } from 'antd';
 import useScrollMore from '..';
 
 const Demo = () => {
-  const ref = React.useRef(null);
+  const ref = React.useRef<HTMLDivElement>(null);
 
   useScrollMore(
-    ref?.current,
+    ref,
     0,
     () => {
-      console.log('刷新 :>> ', '刷新');
+      // 调接口
+      message.info('刷新');
     },
     [],
   );

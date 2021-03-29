@@ -1,24 +1,25 @@
 import * as React from 'react';
 
 const useScrollMore = (
-  ele: HTMLElement,
+  ref: React.MutableRefObject<HTMLDivElement>,
   sExtraB: number,
   cb: () => void,
   deps: any[],
 ) => {
   return React.useEffect(() => {
+    const current = ref.current;
     const handleScroll = () => {
-      const pBottom = ele.getBoundingClientRect().bottom;
-      const sBottom = ele.firstElementChild?.getBoundingClientRect().bottom;
+      const pBottom = current.getBoundingClientRect().bottom;
+      const sBottom = current.firstElementChild?.getBoundingClientRect().bottom;
       if (pBottom === sBottom! + sExtraB) {
         cb();
       }
     };
 
-    ele?.addEventListener('scroll', handleScroll);
+    current?.addEventListener('scroll', handleScroll);
 
     return () => {
-      ele?.removeEventListener('scroll', handleScroll);
+      current?.removeEventListener('scroll', handleScroll);
     };
   }, [...deps]);
 };
