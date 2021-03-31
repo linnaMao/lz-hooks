@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import { useLocalStorage } from 'lz-hooks';
+import { useStorage } from 'lz-hooks';
 
 const Demo: React.FC = () => {
-  const [info, setInfo, removeInfo] = useLocalStorage('info');
+  const [info, setInfo, removeInfo] = useStorage('info', 'sessionStorage');
   const data = {
     name: 'mlz',
     age: 18,

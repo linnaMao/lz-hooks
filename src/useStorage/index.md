@@ -13,10 +13,14 @@ group:
 
 ## 代码演示
 
-<!-- <code src='./demo' /> -->
+<code src='./demo' title='localStorage' />
+<code src='./demo/index1' title='sessionStorage' />
 
 ## API
 
 ```javascript
-const [state, newSetState, removeState] = useStorage(value, way);
+const [state, newSetState, removeState] = useStorage(
+  name,
+  'localStorage' | 'sessionStorage',
+);
 ```

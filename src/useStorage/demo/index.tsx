@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button } from 'antd';
-import useSessionStorage from '..';
+import { useStorage } from 'lz-hooks';
 
 const Demo: React.FC = () => {
-  const [info, setInfo, removeInfo] = useSessionStorage('info');
+  const [info, setInfo, removeInfo] = useStorage('info', 'localStorage');
   const data = {
     name: 'mlz',
     age: 18,
