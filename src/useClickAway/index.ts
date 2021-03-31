@@ -1,17 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-const useClickAway = (cb: () => void, ref: any) => {
+const useClickAway = (onClickAway: () => void, refs: any) => {
   return useEffect(() => {
     const handleClick = (e: any) => {
-      if (ref.current?.contains(e.target)) return;
-      cb();
+      const targetArr = Array.isArray(refs) ? refs : [refs];
+      const clickAway = targetArr.find(i => i.current.contains(e.target));
+      if (!clickAway) {
+        onClickAway();
+      }
     };
 
     document.addEventListener('click', handleClick);
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [cb, ref]);
+  }, [onClickAway, refs]);
 };
 
 export default useClickAway;
