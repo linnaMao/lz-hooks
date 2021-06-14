@@ -2,7 +2,6 @@ import * as React from 'react';
 
 const useScrollMore = (
   ref: React.MutableRefObject<HTMLDivElement>,
-  sExtraB: number,
   cb: () => void,
   deps: any[],
 ) => {
@@ -11,7 +10,11 @@ const useScrollMore = (
     const handleScroll = () => {
       const pBottom = current.getBoundingClientRect().bottom;
       const sBottom = current.firstElementChild?.getBoundingClientRect().bottom;
-      if (pBottom === sBottom! + sExtraB) {
+      const sMargin = parseInt(
+        window.getComputedStyle(current.firstElementChild as Element)
+          .marginBottom,
+      );
+      if (pBottom === sBottom! + sMargin) {
         cb();
       }
     };

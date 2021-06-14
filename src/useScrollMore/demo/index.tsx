@@ -7,7 +7,6 @@ const Demo = () => {
 
   useScrollMore(
     ref,
-    0,
     () => {
       // 调接口
       message.info('刷新');
@@ -17,7 +16,7 @@ const Demo = () => {
 
   return (
     <div style={{ height: 200, overflow: 'auto' }} ref={ref}>
-      <div style={{ height: 600 }}>123</div>
+      <div style={{ height: 600, marginBottom: 60 }}>123</div>
     </div>
   );
 };
